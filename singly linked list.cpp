@@ -42,8 +42,8 @@ void addafter(int s,int d)
     }
     t=new node;
     t->data=d;
-    t->link=q->link;
     q->link=t;
+    t->link=q->link;
     cout<<"Data added successfully!!!"<<endl;
 }
 
