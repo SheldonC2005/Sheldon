@@ -13,11 +13,6 @@ class node
         data=0;
         left=right=NULL;
     }
-    node(int d)
-    {
-        data=d;
-        left=right=NULL;
-    }
 };
 
 class tree
@@ -27,17 +22,6 @@ class tree
     tree()
     {
         root=NULL;
-    }
-    bool isempty()
-    {
-        if(root==NULL)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
     }
 
     void insert(node *n)
@@ -82,6 +66,39 @@ class tree
             }
         }
     }
+
+    void preorder(node *r)
+    {
+        if(r==NULL)
+        {
+            return;
+        }
+        cout<<r->data<<endl;
+        preorder(r->left);
+        preorder(r->right);
+    }
+
+    void inorder(node *r)
+    {
+        if(r=NULL)
+        {
+            return;
+        }
+        inorder(r->left);
+        cout<<r->data<<endl;
+        inorder(r->right);
+    }
+
+    void postorder(node *r)
+    {
+        if(r==NULL)
+        {
+            return;
+        }
+        postorder(r->left);
+        postorder(r->right);
+        cout<<r->data<<endl;
+    }
 };
 
 int main()
@@ -91,9 +108,12 @@ int main()
     do
     {
         cout<<"*******************************"<<endl;
-        cout<<"Choose option:(0 to exit)"<<endl;
+        cout<<"Choose option:"<<endl;
         cout<<"1.Insert node"<<endl;
-        cout<<"2.Search node"<<endl;
+        cout<<"2.Preorder print"<<endl;
+        cout<<"3.Inorder print"<<endl;
+        cout<<"4.Postorder print"<<endl;
+        cout<<"5.Terminate program"<<endl;
         cin>>c;
         node *n;
         n=new node();
@@ -105,11 +125,19 @@ int main()
             n->data=d;
             t.insert(n);
             break;
-
+            
             case 2:
-            //traversal
+            t.preorder(t.root);
+            break;
+
+            case 3:
+            t.inorder(t.root);
+            break;
+
+            case 4:
+            t.postorder(t.root);
             break;
         }
-    }while(c!=0);
+    }while(c!=5);
     return 0;
 }
