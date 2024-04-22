@@ -26,6 +26,6 @@ int main()
     cout<<"The sorted list is:"<<endl;
     for(i=0;i<n;i++)
     {
-        cout<<a[i]<<endl;
+        cout<<a[i]<<"\t";
     }
 }
