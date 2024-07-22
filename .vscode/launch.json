@@ -1,6 +1,111 @@
 {
     "configurations": [
         {
+            "type": "java",
+            "name": "Pgm17",
+            "request": "launch",
+            "mainClass": "Java.Pgm17",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm16",
+            "request": "launch",
+            "mainClass": "Java.Pgm16",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm15",
+            "request": "launch",
+            "mainClass": "Java.Pgm15",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm14",
+            "request": "launch",
+            "mainClass": "Java.Pgm14",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm13",
+            "request": "launch",
+            "mainClass": "Java.Pgm13",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm12",
+            "request": "launch",
+            "mainClass": "Java.Pgm12",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm11",
+            "request": "launch",
+            "mainClass": "Java.Pgm11",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm10",
+            "request": "launch",
+            "mainClass": "Java.Pgm10",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm7",
+            "request": "launch",
+            "mainClass": "Java.Pgm7",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm6",
+            "request": "launch",
+            "mainClass": "Java.Pgm6",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm5",
+            "request": "launch",
+            "mainClass": "Java.Pgm5",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm4",
+            "request": "launch",
+            "mainClass": "Java.Pgm4",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm3",
+            "request": "launch",
+            "mainClass": "Java.Pgm3",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm2",
+            "request": "launch",
+            "mainClass": "Java.Pgm2",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm1",
+            "request": "launch",
+            "mainClass": "Java.Pgm1",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
             "name": "C/C++: gcc.exe build and debug active file",
             "type": "cppdbg",
             "request": "launch",
