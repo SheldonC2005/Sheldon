@@ -2,6 +2,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Prcatise",
+            "request": "launch",
+            "mainClass": "Java.Prcatise",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
             "name": "Pgm17",
             "request": "launch",
             "mainClass": "Java.Pgm17",
