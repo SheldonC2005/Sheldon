@@ -1,7 +1,7 @@
 package Java;
 import java.util.Scanner;
 
-public class Prcatise
+public class Practise
 {
     public static void main(String args[])
     {
