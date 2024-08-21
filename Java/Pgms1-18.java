@@ -815,3 +815,496 @@ class Pgm1
         innerobj.disp();
     }
 }*/
+
+//Assessment 1
+
+/*import java.util.Scanner;
+
+class Converter
+{
+    float a,m;
+    Converter()
+    {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter money to be converted:");
+        m=sc.nextFloat();
+    }
+    void dtoi()
+    {
+        a=m*82;
+        System.out.println("Dollar in INR: "+a);
+    }
+    void itod()
+    {
+        a=m/82;
+        System.out.println("INR in Dollar: "+a);
+    }
+    void etoi()
+    {
+        a=m*91;
+        System.out.println("Euro in INR: "+a);
+    }
+    void itoe()
+    {
+        a=m/91;
+        System.out.println("INR in Euro: "+a);
+    }
+    void ytoi()
+    {
+        a=(m/2);
+        System.out.println("Yen in INR: "+a);
+    }
+}
+
+public class Pgm1
+{
+    public static void main(String args[])
+    {
+        int opt;
+        
+        do
+        {
+            Scanner sc=new Scanner(System.in);
+            System.out.println("************************");
+            System.out.println("Choose converter:");
+            System.out.println("Enter 0 to exit");
+            System.out.println("1.Dollar to INR");
+            System.out.println("2.INR to Dollar");
+            System.out.println("3.Euro to INR");
+            System.out.println("4.INR to Euro");
+            System.out.println("5.Yen to INR");
+            System.out.print("Enter option: ");
+            opt=sc.nextInt();
+            
+            switch(opt)
+            {
+                case 1:
+                    Converter obj1=new Converter();
+                    obj1.dtoi();
+                    break;
+                case 2:
+                    Converter obj2=new Converter();
+                    obj2.itod();
+                    break;
+                case 3:
+                    Converter obj3=new Converter();
+                    obj3.etoi();
+                    break;
+                case 4:
+                    Converter obj4=new Converter();
+                    obj4.itoe();
+                    break;
+                case 5:
+                    Converter obj5=new Converter();
+                    obj5.ytoi();
+                    break;
+            }
+        }while(opt!=0);
+    }
+}*/
+
+//Program 37
+/*class Superclass
+{
+    void methodSuper()
+    {
+        System.out.println("Super method");
+    }
+}
+class Subclass extends Superclass
+{
+    void methodSubClass()
+    {
+        System.out.println("Subclass Method");
+    }
+}
+class Pgm1
+{
+    public static void main(String args[])
+    {
+        Subclass obj=new Subclass();
+        obj.methodSubClass();
+        obj.methodSuper();
+    }
+}*/
+
+//Program 38
+/*class Bird
+{
+    void fly()
+    {
+        System.out.println("I am a bird");
+    }
+}
+class Parrot extends Bird
+{
+    void colour()
+    {
+        System.out.println("I am green");
+    }
+}
+class Pgm1
+{
+    public static void main(String args[])
+    {
+        Parrot obj=new Parrot();
+        obj.colour();
+        obj.fly();
+    }
+}*/
+
+//Program 39
+/*class Bird
+{
+    void fly()
+    {
+        System.out.println("I am a bird");
+    }
+}
+class Parrot extends Bird
+{
+    void colour()
+    {
+        System.out.println("I am green");
+    }
+}
+class SingingParrot extends Parrot
+{
+    void whatCanISing()
+    {
+        System.out.println("I can sing opera");
+    }
+}
+class Pgm1
+{
+    public static void main(String args[])
+    {
+        SingingParrot obj=new SingingParrot();
+        obj.colour();
+        obj.fly();
+        obj.whatCanISing();
+    }
+}*/
+
+//Program 40
+/*class Bird
+{
+    void fly()
+    {
+        System.out.println("I am a bird");
+    }
+}
+class Parrot extends Bird
+{
+    void colour()
+    {
+        System.out.println("I am green");
+    }
+}
+class Crow extends Bird
+{
+    void colour()
+    {
+        System.out.println("I am black");
+    }
+}
+class Pgm1
+{
+    public static void main(String args[])
+    {
+        Parrot obj1=new Parrot();
+        obj1.colour();
+        obj1.fly();
+        Crow obj2=new Crow();
+        obj2.colour();
+        obj2.fly();
+        
+    }
+}*/
+
+//Program 41
+/*class Super1
+{
+    public void functionSuper1()
+    {
+        System.out.println("Super 1 function called");
+    }
+}
+class Super2
+{
+    public void funcionSuper2()
+    {
+        System.out.println("Super 2 function called");
+    }
+}
+class Sub extends Super1,Super2
+{
+    public void subFunction()
+    {
+        System.out.println("Subclass of both");
+    }
+}
+class Pgm1
+{
+    public static void main(String args[])
+    {
+        Sub obj=new Sub();
+        obj.subFunction();
+        obj.functionSuper1();
+        obj.functionSuper2();
+    }
+}*/
+
+//Program 44
+/*class Animal
+{
+    public void disp()
+    {
+        System.out.println("I am an animal");
+    }
+}
+class Dog extends Animal
+{
+    public void disp()
+    {
+        System.out.println("I am a dog");
+    }
+    public void printMessage()
+    {
+        disp();
+        super.disp();
+    }
+}
+class Pgm1
+{
+    public static void main(String args[])
+    {
+        Dog obj=new Dog();
+        obj.printMessage();
+    }
+}*/
+
+//Program 45
+/*package MyPack;
+class Balance
+{
+    String name;
+    double bal;
+    Balance(String n,double b)
+    {
+        name=n;
+        bal=b;
+    }
+    void show()
+    {
+        if(bal<0)
+        {
+            System.out.println("Name: "+name);
+            System.out.println("Balance: "+bal);
+        }
+    }
+}
+class Pgm1
+{
+    public static void main(String args[])
+    {
+        Balance test=new Balance("J.J.Jasper",-58);
+        test.show();
+    }
+}*/
+
+//Program 46
+/*abstract class Bike
+{
+    abstract void run();
+}
+class Pgm1 extends Bike
+{
+    void run()
+    {
+        System.out.println("Running safely");
+    }
+    public static void main(String args[])
+    {
+        Bike obj=new Honda();
+        obj.run();
+    }
+}*/
+
+//Program 47
+/*import java.util.Scanner;
+class Pgm1
+{
+    public static void main(String args[])
+    {
+        int a,b,c;
+        Scanner sc=new Scanner(System.in);
+        try
+        {
+            System.out.println("Enter a value:");
+            a=sc.nextInt();
+            System.out.println("Enter b value:");
+            b=sc.nextInt();
+            c=a/b;
+            System.out.println("Answer:"+c);
+        }catch(Exception e)
+        {
+            System.out.println("Exception caught");
+            e.printStackTrace();
+        }
+        System.out.println("Rest of the code.....");
+    }
+}*/
+
+//Program 48
+/*import java.util.Scanner;
+class Pgm1
+{
+    public static void main(String args[])
+    {
+        int a,b,c;
+        Scanner sc=new Scanner(System.in);
+        try
+        {
+            System.out.println("Enter a value:");
+            a=sc.nextInt();
+            System.out.println("Enter b value:");
+            b=sc.nextInt();
+            c=a/b;
+            System.out.println("Answer:"+c);
+        }
+        catch(ArrayIndexOutOfBoundsException e1)
+        {
+            System.out.println("Catch 1");
+        }
+        catch(ArithmeticException e2)
+        {
+            System.out.println("Catch 2");
+        }
+        catch(Exception e3)
+        {
+            System.out.println("Catch 3");
+        }
+        System.out.println("Rest of the code.....");
+    }
+}*/
+
+//Program 49
+/*import java.util.Scanner;
+class Pgm1
+{
+    public static void main(String args[])
+    {
+        try
+        {
+            int a[]=new int[2];
+            System.out.println("Answer: "+a[3]);
+        }
+        catch(ArrayIndexOutOfBoundsException e1)
+        {
+            System.out.println("Catch 1");
+        }
+        catch(ArithmeticException e2)
+        {
+            System.out.println("Catch 2");
+        }
+        catch(Exception e3)
+        {
+            System.out.println("Catch 3");
+        }
+        System.out.println("Rest of the code.....");
+    }
+}*/
+
+//Program 50
+/*import java.util.Scanner;
+class Pgm1
+{
+    public static void main(String args[])
+    {
+        try
+        {
+            int a[]=new int[2];
+            try
+            {
+                int c=10/0;
+            }catch(ArrayIndexOutOfBoundsException e)
+            {
+                System.out.println("Inside Catch");
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println("Outside Catch");
+        }
+        System.out.println("Rest of the code.....");
+    }
+}*/
+
+//Program 51
+/*import java.util.Scanner;
+class Pgm1
+{
+    public static void main(String args[])
+    {
+        try
+        {
+            int a=10/5;
+            System.out.println(a);
+        }
+        catch(NullPointerException e)
+        {
+            System.out.println("Caught exception");
+        }
+        finally
+        {
+            System.out.println("Always executed");
+        }
+        System.out.println("Rest of the code.....");
+    }
+}*/
+
+//Program 52
+/*class Pgm1
+{
+    public static void main(String args[])
+    {
+        try
+        {
+            System.out.println("Inside try");
+            int a=10/0;
+            System.out.println(a);
+        }
+        catch(NullPointerException e)
+        {
+            System.out.println("Caught exception");
+        }
+        finally
+        {
+            System.out.println("Always executed");
+        }
+        System.out.println("Rest of the code.....");
+    }
+}*/
+
+//Program 53
+/*class Pgm1
+{
+    public static void main(String args[])
+    {
+        try
+        {
+            int a=10/0;
+            System.out.println(a);
+        }
+        catch(ArithmeticException e)
+        {
+            System.out.println("Caught exception");
+        }
+        finally
+        {
+            System.out.println("Always executed");
+        }
+        System.out.println("Rest of the code.....");
+    }
+}*/
