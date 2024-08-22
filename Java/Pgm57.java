@@ -1308,3 +1308,124 @@ class Pgm1
         System.out.println("Rest of the code.....");
     }
 }*/
+
+//Program 54
+/*class ThrowException    //Demo fo throw
+{
+    static void fun()
+    {
+        try
+        {
+            throw new NullPointerException();
+        }
+        catch(NullPointerException e)
+        {
+            System.out.println("Caught inside fun");
+            throw e;
+        }
+    }
+    public static void main(String args[])
+    {
+        try
+        {
+            fun();
+        }
+        catch(NullPointerException e)
+        {
+            System.out.println("Caught in main");
+        }
+    }
+}*/
+
+//Program 55            Demo of throws
+/*class ThrowDemo
+{
+    static void throwone() throws IllegalAccessException
+    {
+        System.out.println("Throw one");
+        throw new IllegalAccessException();
+    }
+    public static void main(String args[])
+    {
+        try
+        {
+            throwone();
+        }
+        catch(IllegalAccessException e)
+        {
+            System.out.println("Caught");
+        }
+    }
+}*/
+
+//Program 56        Demo of user defined exception
+/*class MyException extends Exception
+{
+    private int detail;
+    MyException(int a)
+    {
+        detail=a;
+    }
+    public String toString()          //built in function of java.lang package
+    {
+        return "My Exception ["+detail+"]";
+    }
+}
+class ExceptionDemo
+{
+    static void compute(int a) throws MyException
+    {
+        System.out.println("Called compute("+a+")");
+        if(a>10)
+        {
+            throw new MyException(a);
+        }
+        System.out.println("Normal exit");
+    }
+    public static void main(String args[])
+    {
+        try
+        {
+            compute(1);
+            compute(20);
+        }
+        catch(MyException e)
+        {
+            System.out.println("Caught "+e);
+        }
+    }
+}*/
+
+//Program 57                        Demo of user defined exception
+/*import java.io.*;
+class MyException extends Exception
+{
+    public MyException(String str)
+    {
+        System.out.println(str);
+    }
+}
+public class Pgm57
+{
+    public static void main(String args[]) throws IOException
+    {
+        BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Mark: ");
+        try
+        {
+            int mark=Integer.parseInt(br.readLine());
+            if(mark<0)
+            {
+                throw new MyException("Negative");
+            }
+            else
+            {
+                throw new MyException("Positive");
+            }
+        }
+        catch(MyException e)
+        {
+            System.out.println(e);
+        }
+    }
+}*/

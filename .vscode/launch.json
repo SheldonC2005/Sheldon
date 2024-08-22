@@ -2,6 +2,34 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Pgm57",
+            "request": "launch",
+            "mainClass": "Java.Pgm57",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "ExceptionDemo",
+            "request": "launch",
+            "mainClass": "Java.ExceptionDemo",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "ThrowDemo",
+            "request": "launch",
+            "mainClass": "Java.ThrowDemo",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "ThrowException",
+            "request": "launch",
+            "mainClass": "Java.ThrowException",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
             "name": "Prcatise",
             "request": "launch",
             "mainClass": "Java.Prcatise",
