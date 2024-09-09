@@ -160,7 +160,7 @@ int main()
     }
     printf("Smallest number is %d\n", smallest);
     printf("Largest number is %d\n", largest);
-    printf("Absolute value of the difference = |%d - %d| = %d\n", smallest, largest, abs_diff);
+    printf("Absolute value of the differenj = |%d - %d| = %d\n", smallest, largest, abs_diff);
     printf("Output matrix:\n");
     for (int i = 0; i < N; i++)
     {
@@ -177,12 +177,12 @@ int main()
 /*#include <stdio.h>
 int main()
 {
-   int rows,a=1,space,i,j;
-   printf("Enter the number of rows:");
-   scanf("%d", &rows);
-   for (i=0;i<rows;i++)
+   int n,a=1,j,i,j;
+   printf("Enter the number of n:");
+   scanf("%d", &n);
+   for (i=0;i<n;i++)
    {
-      for(space=1;space<=rows-i;space++)
+      for(j=1;j<=n-i;j++)
       {
         printf("  ");
       }
@@ -260,4 +260,75 @@ int main()
     }
     printf("\n");
     return 0;
+}*/
+
+/*#include <stdio.h>
+int main()
+{
+   int i, j, n, k = 0;
+   printf("Enter n: ");
+   scanf("%d", &n);
+   for (i = 1; i <= n;i++, k = 0)
+   {
+        for (j = 1; j <= n - i;j++)
+        {
+            printf("  ");
+        }
+        while (k != 2 * i - 1)
+        {
+            printf("%d ",i);
+            k++;
+        }
+        printf("\n");
+   }
+   return 0;
+}*/
+
+/*#include <stdio.h>
+int main()
+{
+   int i, j, n, k = 0;
+   printf("Enter n: ");
+   scanf("%d", &n);
+   for (i = 1; i <= n;i++, k = 0)
+   {
+        for (j = 1; j <= n - i;j++)
+        {
+            printf("  ");
+        }
+        for(k=1;k<=i;k++)
+        {
+            printf("%d ",i);
+        }
+        printf("\n");
+   }
+   return 0;
+}*/
+
+/*#include <stdio.h>
+int main()
+{
+   int i, j, n, k = 0;
+   printf("Enter n: ");
+   scanf("%d", &n);
+   for (i = 1; i <= n;i++, k = 0)
+   {
+        for (j = 1; j <= n - i;j++)
+        {
+            printf("  ");
+        }
+        for(k=1;k<=2*i-1;k++)
+        {
+            if(k==1||k==2*i-1||i==n)
+            {
+                printf("* ");
+            }
+            else
+            {
+                printf("  ");
+            }
+        }
+        printf("\n");
+   }
+   return 0;
 }*/

@@ -1147,7 +1147,8 @@ class Pgm1
             b=sc.nextInt();
             c=a/b;
             System.out.println("Answer:"+c);
-        }catch(Exception e)
+        }
+        catch(Exception e)
         {
             System.out.println("Exception caught");
             e.printStackTrace();
@@ -1217,8 +1218,7 @@ class Pgm1
 }*/
 
 //Program 50
-/*import java.util.Scanner;
-class Pgm1
+/*class Pgm1
 {
     public static void main(String args[])
     {
@@ -1228,7 +1228,8 @@ class Pgm1
             try
             {
                 int c=10/0;
-            }catch(ArrayIndexOutOfBoundsException e)
+            }
+            catch(ArrayIndexOutOfBoundsException e)
             {
                 System.out.println("Inside Catch");
             }
@@ -1310,7 +1311,7 @@ class Pgm1
 }*/
 
 //Program 54
-/*class ThrowException    //Demo fo throw
+/*class ThrowException                                 //Demo for throw
 {
     static void fun()
     {
@@ -1337,7 +1338,7 @@ class Pgm1
     }
 }*/
 
-//Program 55            Demo of throws
+//Program 55                                                Demo for throws
 /*class ThrowDemo
 {
     static void throwone() throws IllegalAccessException
@@ -1358,7 +1359,7 @@ class Pgm1
     }
 }*/
 
-//Program 56        Demo of user defined exception
+//Program 56                                               Demo of user defined exception
 /*class MyException extends Exception
 {
     private int detail;
@@ -1366,7 +1367,7 @@ class Pgm1
     {
         detail=a;
     }
-    public String toString()          //built in function of java.lang package
+    public String toString()                               //built in function of java.lang package
     {
         return "My Exception ["+detail+"]";
     }
@@ -1396,7 +1397,7 @@ class ExceptionDemo
     }
 }*/
 
-//Program 57                        Demo of user defined exception
+//Program 57                                                 Demo of user defined exception
 /*import java.io.*;
 class MyException extends Exception
 {
@@ -1410,7 +1411,7 @@ public class Pgm57
     public static void main(String args[]) throws IOException
     {
         BufferedReader br=new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Mark: ");
+        System.out.println("Enter Mark: ");
         try
         {
             int mark=Integer.parseInt(br.readLine());
@@ -1427,5 +1428,196 @@ public class Pgm57
         {
             System.out.println(e);
         }
+    }
+}*/
+
+//Program 58
+/*class Pgm58                                               Thread name set and sleep
+{
+    public static void main(String args[])
+    {
+        Thread t =Thread.currentThread();
+        System.out.println("Cuurent thread: "+t);
+        t.setName("My Thread");
+        System.out.println("After name change: "+t);
+        try
+        {
+            for(int n=5;n>0;n--)
+            {
+                System.out.println(n);
+                Thread.sleep(1000);
+            }
+        }
+        catch(InterruptedException e)
+        {
+            System.out.println("Interrupted");
+        }
+    }
+}*/
+
+//Program 59                                         Demo of extends Thread Class
+/*class MyThread extends Thread
+{
+    public void run()
+    {
+        System.out.println("Hello from my thread");
+    }
+}
+public class ThreadDemo
+{
+    public static void main(String args[])
+    {
+        MyThread thread=new MyThread();
+        thread.start();
+    }
+}*/
+
+//Program 60                                 Demo of implements Runnable
+/*class MyRunnable implements Runnable
+{
+    public void run()
+    {
+        System.out.println("Hello");
+    }
+}
+public class MyDemo
+{
+    public static void main(String args[])
+    {
+        MyRunnable obj=new MyRunnable();
+        Thread t=new Thread(obj);
+        t.start();
+    }
+}*/
+
+//Program 61                                       Demo of Thread creation and Multi Threading with single custom thread and two objects
+/*public class MyThread extends Thread
+{
+    String task;
+    MyThread(String task)
+    {
+        this.task=task;
+    }
+    public void run()
+    {
+        for(int i=1;i<=5;i++)
+        {
+            System.out.println(task+" : "+i);
+            try
+            {
+                Thread.sleep(3000);
+            }
+            catch(InterruptedException e)
+            {
+                System.out.println(e);
+            }
+        }
+    }
+    public static void main(String args[])
+    {
+        MyThread th1=new MyThread("Cut the ticket");
+        MyThread th2=new MyThread("Show seat number");
+        Thread t1=new Thread(th1);
+        Thread t2=new Thread(th2);
+        t1.start();
+        t2.start();
+    }
+}*/
+
+//Program 62                                      Demo of Multi Threading wih objects of multiple custom threads along with main thread
+/*class MyThread1 implements Runnable
+{
+    public void run()
+    {
+        for(int i=0;i<5;i++)
+        {
+            System.out.println("1st child thread: "+i);
+        }
+        System.out.println("1st child exited");
+    }
+}
+class MyThread2 implements Runnable
+{
+    public void run()
+    {
+        for(int i=0;i<5;i++)
+        {
+            System.out.println("2nd child thread: "+i);
+        }
+        System.out.println("2nd child exited");
+    }
+}
+public class Demo
+{
+    public static void main(String args[])
+    {
+        MyThread1 th1=new MyThread1();
+        Thread t1=new Thread(th1);
+        t1.start();
+        MyThread2 th2=new MyThread2();
+        Thread t2=new Thread(th2);
+        t2.start();
+        for(int i=0;i<4;i++)
+        {
+            System.out.println("Main Thread: "+i);
+        }
+        System.out.println("Main Thread exited");
+    }
+}*/
+
+//Program 63                                           Demo of Thread Priority
+/*public class A implements Runnable
+{
+    public void run()
+    {
+        System.out.println(Thread.currentThread());
+    }
+    public static void main(String args[])
+    {
+        A a=new A();
+        Thread t=new Thread(a,"New Thread");
+        System.out.println("Priority of thread: "+t.getPriority());
+        System.out.println("Name of thread: "+t.getName());
+        t.start();
+    }
+}*/
+
+//Program 64                                             Demo of setting priority
+/*public class B implements Runnable
+{
+    public void run()
+    {
+        System.out.println(Thread.currentThread());
+    }
+    public static void main(String args[])
+    {
+        B a=new B();
+        Thread t=new Thread(a,"New Thread");
+        t.setPriority(2);
+        System.out.println("Priority of thread: "+t.getPriority());
+        System.out.println("Name of thread: "+t.getName());
+        t.start();
+    }
+}*/
+
+//Program 65                                           Demo of Thread Priority with Multiple Threads
+/*public class C implements Runnable
+{
+    public void run()
+    {
+        System.out.println(Thread.currentThread());
+    }
+    public static void main(String args[])
+    {
+        C a=new C();
+        Thread t1=new Thread(a,"Thread 1");
+        Thread t2=new Thread(a,"Thread 2");
+        Thread t3=new Thread(a,"Thread 3");
+        t1.setPriority(4);
+        t1.setPriority(2);
+        t1.setPriority(8);
+        t1.start();
+        t2.start();
+        t3.start();
     }
 }*/

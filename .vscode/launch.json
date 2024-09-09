@@ -2,6 +2,69 @@
     "configurations": [
         {
             "type": "java",
+            "name": "C",
+            "request": "launch",
+            "mainClass": "Java.C",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "B",
+            "request": "launch",
+            "mainClass": "Java.B",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "A",
+            "request": "launch",
+            "mainClass": "Java.A",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Demo",
+            "request": "launch",
+            "mainClass": "Java.Demo",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "MyThread",
+            "request": "launch",
+            "mainClass": "Java.MyThread",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "MyDemo",
+            "request": "launch",
+            "mainClass": "Java.MyDemo",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "ThreadDemo",
+            "request": "launch",
+            "mainClass": "Java.ThreadDemo",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm58",
+            "request": "launch",
+            "mainClass": "Java.Pgm58",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Honda",
+            "request": "launch",
+            "mainClass": "Java.Honda",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
             "name": "Pgm57",
             "request": "launch",
             "mainClass": "Java.Pgm57",
