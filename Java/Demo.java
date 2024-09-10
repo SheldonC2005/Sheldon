@@ -1621,3 +1621,460 @@ public class Demo
         t3.start();
     }
 }*/
+
+//Program 66                                         Creation of Multiple Thread classes and executing with setPriority method
+/*class X implements Runnable
+{
+    public void run()
+    {
+        System.out.println("Thread X started");
+        for(int i=1;i<=4;i++)
+        {
+            System.out.println("Thread X: "+i);
+        }
+        System.out.println("Exit from X");
+    }
+}
+class Y implements Runnable
+{
+    public void run()
+    {
+        System.out.println("Thread Y started");
+        for(int j=1;j<=4;j++)
+        {
+            System.out.println("Thread Y: "+j);
+        }
+        System.out.println("Exit from Y");
+    }
+}
+class Z implements Runnable
+{
+    public void run()
+    {
+        System.out.println("Thread Z started");
+        for(int k=1;k<=4;k++)
+        {
+            System.out.println("Thread Z: "+k);
+        }
+        System.out.println("Exit from Z");
+    }
+}
+public class ThreadPriority
+{
+    public static void main(String args[])
+    {
+        X x=new X();
+        Y y=new Y();
+        Z z=new Z();
+        Thread t1=new Thread(x);
+        Thread t2=new Thread(y);
+        Thread t3=new Thread(z);
+        t1.setPriority(10);
+        System.out.println("Priority of Y before: "+t2.getPriority());
+        t2.setPriority(t2.getPriority()+4);
+        t3.setPriority(1);
+        t1.start();
+        t2.start();
+        t3.start();
+    }
+}*/
+
+//Program 67                                           Synchronization in Multi Threading
+/*class Table
+{
+    synchronized void print(int val)
+    {
+        for(int i=1;i<=10;i++)
+        {
+            System.out.println(val*i);
+            try
+            {
+                Thread.sleep(1000);
+            }
+            catch(Exception e)
+            {
+                System.out.println(e);
+            }
+        }
+    }
+}
+class Thread1 extends Thread
+{
+    Table t;
+    Thread1(Table t)
+    {
+        this.t=t;
+    }
+    public void run()
+    {
+        t.print(4);
+    }
+}
+class Thread2 extends Thread
+{
+    Table t;
+    Thread2(Table t)
+    {
+        this.t=t;
+    }
+    public void run()
+    {
+        t.print(6);
+    }
+}
+public class Main
+{
+    public static void main(String args[])
+    {
+        Table t=new Table();
+        Thread1 t1=new Thread1(t);
+        Thread2 t2=new Thread2(t);
+        t1.start();
+        t2.start();
+    }
+}*/
+
+//Program 68                                                  Inter Thread Communication in Multi Threading
+/*class A
+{
+    int i;
+    boolean flag=false;
+    synchronized void deliver(int i)
+    {
+        if(flag)
+        {
+            try
+            {
+                wait();
+            }
+            catch(InterruptedException e)
+            {
+                System.out.println(e);
+            }
+            this.i=i;
+            flag=true;
+            System.out.println("Data delivered "+i);
+            notify();
+        }
+        else if(!flag)
+        {
+            try
+            {
+                wait();
+            }
+            catch(InterruptedException e)
+            {
+                System.out.println(e);
+            }
+            this.i=i;
+            flag=true;
+            System.out.println("Data recieved "+i);
+            flag=false;
+            notify();
+        }
+    }
+}
+class Thread1 extends Thread
+{
+    A obj;
+    Thread1(A obj)
+    {
+        this.obj=obj;
+    }
+    public void run()
+    {
+        for(int j=0;j<5;j++)
+        {
+            obj.deliver(j);
+        }
+    }
+}
+class Thread2 extends Thread
+{
+    A obj;
+    Thread2(A obj)
+    {
+        this.obj=obj;
+    }
+    public void run()
+    {
+        for(int k=0;k<5;k++)
+        {
+            obj.deliver(k);
+        }
+    }
+}
+public class Comm
+{
+    public static void main(String args[])
+    {
+        A obj=new A();
+        Thread1 t1=new Thread1(obj);
+        Thread2 t2=new Thread2(obj);
+        t1.start();
+        t2.start();
+    }
+}*/
+
+//                                                               FILES AND GENERICS
+
+//Program 69                                                Using Buffered Reader Class
+/*import java.io.*;
+public class ReadingDemo
+{
+    public static void main(String args[]) throws IOException
+    {
+        BufferedReader in=new BufferedReader(new InputStreamReader(System.in));
+        String name=" ";
+        try
+        {
+            System.out.print("Enter name: ");
+            name=in.readLine();
+            System.out.println("Hello, "+name);
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        finally
+        {
+            in.close();
+        }
+    }
+}*/
+
+//Program 70                                                   Using Console Class
+/*import java.io.*;
+public class Pgm
+{
+    public static void main(String args[])
+    {
+        String name;
+        Console con=System.console();
+        if(con!=null)
+        {
+            name=con.readLine("Enter name: ");
+            System.out.println("Hello, "+name);
+        }
+        else
+        {
+            System.out.println("Console not available");
+        }
+    }
+}*/
+
+//Program 71                                                       Demo for Write Method
+/*public class WritingDemo
+{
+    public static void main(String args[])
+    {
+        int list[]=new int[26];
+        for(int i=0;i<26;i++)
+        {
+            list[i]=i+65;
+        }
+        for(int i:list)
+        {
+            System.out.write(i);
+            System.out.print("\n");
+        }
+    }
+}*/
+
+//Program 72                                                     Using PrintWriter Class
+/*import java.io.*;
+class Demo
+{
+    public static void main(String args[])
+    {
+        String data="Computer";
+        try
+        {
+            PrintWriter output=new PrintWriter("output.txt");
+            output.print(data);
+            output.close();
+        }
+        catch(Exception e)
+        {
+            e.getStackTrace();
+        }
+    }
+}*/
+
+//Program 73                                      Using PrintWriter class with printf method
+/*import java.io.*;
+class Demo
+{
+    public static void main(String args[])
+    {
+        int age=20;
+        try
+        {
+            PrintWriter output=new PrintWriter("sample.txt");
+            output.printf("I am %d years old",age);
+            output.close();
+        }
+        catch(Exception e)
+        {
+            e.getStackTrace();
+        }
+    }
+}*/
+
+//                                             BYTE STREAM
+//Program 74                                   Reading a file using Byte Stream
+/*import java.io.*;
+public class Demo
+{
+    public static void main(String args[]) throws IOException
+    {
+        FileInputStream in=null;
+        try
+        {
+            in=new FileInputStream("sample.txt");
+            int c;
+            while((c=in.read())!=-1)
+            {
+                System.out.write(c);
+            }
+            System.out.println("Reading success");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        finally
+        {
+            if(in!=null)
+            {
+                in.close();
+            }
+        }
+    }
+}*/
+
+//Program 75                                   Writing a file using Byte Stream
+/*import java.io.*;
+import java.util.*;
+public class Demo
+{
+    public static void main(String args[]) throws IOException
+    {
+        FileOutputStream out=null;
+        try
+        {
+            out=new FileOutputStream("sample.txt");
+            Scanner sc=new Scanner(System.in);
+            String str=sc.nextLine();
+            byte arr[]=str.getBytes();
+            for(int i=0;i<arr.length;i++)
+            {
+                out.write(arr[i]);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        finally
+        {
+            out.close();
+        }
+    }
+}*/
+//                                           CHARACTER STREAM
+//Program 76                                 Demo of FileReader
+/*import java.io.*;
+public class Demo
+{
+    public static void main(String args[]) throws IOException
+    {
+        FileReader in=null;
+        try
+        {
+            in=new FileReader("sample.txt");
+            int c;
+            while((c=in.read())!=-1)
+            {
+                System.out.write(c);
+            }
+            System.out.println("Reading success");
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        finally
+        {
+            if(in!=null)
+            {
+                in.close();
+            }
+        }
+    }
+}*/
+
+//Program 77                                     Demo of FileWriter
+/*import java.io.*;
+import java.util.*;
+public class Demo
+{
+    public static void main(String args[]) throws IOException
+    {
+        FileWriter out=null;
+        try
+        {
+            out=new FileWriter("sample.txt");
+            Scanner sc=new Scanner(System.in);
+            String str=sc.nextLine();
+            char arr[]=str.toCharArray();
+            for(int i=0;i<arr.length;i++)
+            {
+                out.write(arr[i]);
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+        finally
+        {
+            out.close();
+        }
+    }
+}*/
+
+//Program 78                                                Demo to Append Data
+/*import java.io.*;
+class FileAppend
+{
+    public static void main(String args[]) throws IOException
+    {
+        String data="Append";
+        File file=new File("sample.txt");
+        FileWriter fr=new FileWriter(file,true);
+        fr.write(data);
+        fr.close();
+    }
+}*/
+
+//Program 79                                   Program to read from 1 file and write into another file
+/*import java.io.*;
+public class Demo
+{
+    public static void main(String args[]) throws IOException
+    {
+        FileReader fr=new FileReader("sample.txt");
+        FileWriter fw=new FileWriter("sample1.txt");
+        String str="";
+        int c;
+        while((c=fr.read())!=-1)
+        {
+            str+=(char)c;
+        }
+        System.out.println(str);
+        fw.write(str);
+        fr.close();
+        fw.close();
+    }
+}*/

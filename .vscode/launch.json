@@ -2,6 +2,48 @@
     "configurations": [
         {
             "type": "java",
+            "name": "FileAppend",
+            "request": "launch",
+            "mainClass": "Java.FileAppend",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "WritingDemo",
+            "request": "launch",
+            "mainClass": "Java.WritingDemo",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm",
+            "request": "launch",
+            "mainClass": "Java.Pgm",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "ReadingDemo",
+            "request": "launch",
+            "mainClass": "Java.ReadingDemo",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Java.Main",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "ThreadPriority",
+            "request": "launch",
+            "mainClass": "Java.ThreadPriority",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
             "name": "C",
             "request": "launch",
             "mainClass": "Java.C",
