@@ -2,6 +2,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Comm",
+            "request": "launch",
+            "mainClass": "Comm",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Main",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm58",
+            "request": "launch",
+            "mainClass": "Pgm58",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Demo",
+            "request": "launch",
+            "mainClass": "Demo",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Comm",
+            "request": "launch",
+            "mainClass": "Java.Comm",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
             "name": "FileAppend",
             "request": "launch",
             "mainClass": "Java.FileAppend",

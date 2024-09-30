@@ -584,3 +584,83 @@ int main()
     }
     return 0;
 }*/
+
+#include<stdio.h>
+ void prime(int n)
+ {
+    int f=0;
+    for(int i=i;i<=n;i++)
+    {
+        if(n%i==0)
+        {
+            f++;
+        }
+    }
+    if(f==2)
+    {
+        printf("\n%d is a Prime Number\n",n);
+    }
+    else
+    {
+        printf("\n%d is not a Prime Number\n",n);
+    }
+ }
+ void factors(int n)
+ {
+    printf("Factors: ");
+    for(int i=1;i<=n;i++)
+    {
+        if(n%i==0)
+        {
+            printf("%d ",i);
+        }
+    }
+ }
+ void primefactors(int n)
+ {
+    printf("Prime factors: ");
+    for(int i=1;i<=n;i++)
+    {
+        if(n%i==0)
+        {
+            if(i==1 || i==n)
+            {
+                continue;
+            }
+            else
+            {
+                int ctr=0;
+                for(int j=1;j<=1;j++)
+                {
+                    if(i%j==0)
+                    {
+                        ctr++;
+                    }
+                }
+                if(ctr==2)
+                {
+                    printf("%d ",i);
+                }
+            }
+        }
+    }
+ }
+
+ int main()
+ {
+    int c,n;
+    void (*ptr[])(int)={prime,factors,primefactors};
+    do
+    {
+        printf("\n*********************************************\n");
+        printf("Enter n: ");
+        scanf("%d",&n);
+        printf("Enter choice:\n");
+        printf("1.Check if prime number\n");
+        printf("2.Find the factors\n");
+        printf("3.Find the prime factors\n");
+        scanf("\n%d",&c);
+        (*ptr[c-1])(n);
+    } while (n!=0);
+    return 0;
+ }

@@ -1,4 +1,3 @@
-package Java;
 
 /*class Pgm1
 {
@@ -1130,7 +1129,7 @@ class Pgm1 extends Bike
         obj.run();
     }
 }*/
-
+//                                               MODULE 3-EXCEPTION HANDLING AND MULTI-THREADING
 //Program 47
 /*import java.util.Scanner;
 class Pgm1
@@ -1217,7 +1216,7 @@ class Pgm1
     }
 }*/
 
-//Program 50
+//Program 50                                                 Nested try-catch block
 /*class Pgm1
 {
     public static void main(String args[])
@@ -1432,12 +1431,12 @@ public class Pgm57
 }*/
 
 //Program 58
-/*class Pgm58                                               Thread name set and sleep
+/*class Pgm58                                               //Thread name set and sleep
 {
     public static void main(String args[])
     {
         Thread t =Thread.currentThread();
-        System.out.println("Cuurent thread: "+t);
+        System.out.println("Current thread: "+t);
         t.setName("My Thread");
         System.out.println("After name change: "+t);
         try
@@ -1472,7 +1471,7 @@ public class ThreadDemo
     }
 }*/
 
-//Program 60                                 Demo of implements Runnable
+//Program 60                                         Demo of implements Runnable
 /*class MyRunnable implements Runnable
 {
     public void run()
@@ -1741,11 +1740,11 @@ public class Main
     boolean flag=false;
     synchronized void deliver(int i)
     {
-        if(flag)
+        if(!flag)
         {
             try
             {
-                wait();
+                Thread.sleep(1000);
             }
             catch(InterruptedException e)
             {
@@ -1756,20 +1755,19 @@ public class Main
             System.out.println("Data delivered "+i);
             notify();
         }
-        else if(!flag)
+        else if(flag)
         {
             try
             {
-                wait();
+                Thread.sleep(1000);
             }
             catch(InterruptedException e)
             {
                 System.out.println(e);
             }
             this.i=i;
-            flag=true;
-            System.out.println("Data recieved "+i);
             flag=false;
+            System.out.println("Data recieved "+i);
             notify();
         }
     }
@@ -1816,7 +1814,7 @@ public class Comm
     }
 }*/
 
-//                                                               FILES AND GENERICS
+//                                                          MODULE 4-FILES AND GENERICS
 
 //Program 69                                                Using Buffered Reader Class
 /*import java.io.*;
@@ -2078,3 +2076,183 @@ public class Demo
         fw.close();
     }
 }*/
+
+//JOIN method try
+/*import java.util.Scanner;
+class Thread1 extends Thread
+{
+    int a;
+    Thread1(int i)
+    {
+        a=i;
+    }
+    public void run()
+    {
+        for(int i=1;i<=a;i++)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+class Thread2 extends Thread
+{
+    int b;
+    Thread2(int i)
+    {
+        b=i;
+    }
+    public void run()
+    {
+        for(int i=1;i<=b;i++)
+        {
+            for(int j=1;j<=b;j++)
+            {
+                System.out.print("#");
+            }
+            System.out.println();
+        }
+    }
+}
+
+class Demo
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        Thread1 t1=new Thread1(n);
+        Thread2 t2=new Thread2(n);
+        t1.start();
+        t2.start();
+        try
+        {
+            t1.join();
+            t2.join();
+        }
+        catch(Exception e){
+        }
+        
+    }
+}*/
+
+//Practise
+import java.util.Scanner;
+class Calc
+{
+    private int n;
+    private boolean isbin;
+    private int r;
+    Calc(int r)
+    {
+        this.r=r;
+        this.n=0;
+        isbin=false;
+    }
+    void Bin(int n)
+    {
+        String str=Integer.toBinaryString(n);
+        System.out.println("Binary: "+str);
+    }
+    void Hex(int n)
+    {
+        String str=Integer.toHexString(n);
+        System.out.println("Hexa: "+str);
+    }
+    public synchronized void printBin()
+    {
+        while(n<r)
+        {
+            if(isbin)
+            {
+                Bin(n);
+                isbin=false;
+                n++;
+                notify();
+            }
+            else
+            {
+                try
+                {
+                    wait();
+                }
+                catch(Exception e)
+                {
+                    System.out.println(e);
+                }
+            }
+        }
+    }
+    public synchronized void printHex()
+    {
+        while(n<r)
+        {
+            if(!isbin)
+            {
+                Hex(n);
+                isbin=true;
+                n++;
+                notify();
+            }
+            else
+            {
+                try
+                {
+                    wait();
+                }
+                catch(Exception e)
+                {
+                    System.out.println(e);
+                }
+            }
+        }
+    }
+}
+class T1 extends Thread
+{
+    Calc obj1;
+    T1(Calc obj1)
+    {
+        this.obj1=obj1;
+    }
+    public void run()
+    {
+        obj1.printBin();
+    }
+}
+class T2 extends Thread
+{
+    Calc obj2;
+    T2(Calc obj2)
+    {
+        this.obj2=obj2;
+    }
+    public void run()
+    {
+        obj2.printHex();
+    }
+}
+class Demo
+{
+    public static void main(String args[])
+    {
+        try
+        {
+            Scanner sc=new Scanner(System.in);
+            System.out.print("Enter range: ");
+            int r=sc.nextInt();
+            Calc obj=new Calc(r*2);
+            T1 t1=new T1(obj);
+            T2 t2=new T2(obj);
+            t1.start();
+            t2.start();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+    }
+}
