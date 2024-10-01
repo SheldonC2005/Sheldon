@@ -1814,6 +1814,186 @@ public class Comm
     }
 }*/
 
+//JOIN method try
+/*import java.util.Scanner;
+class Thread1 extends Thread
+{
+    int a;
+    Thread1(int i)
+    {
+        a=i;
+    }
+    public void run()
+    {
+        for(int i=1;i<=a;i++)
+        {
+            for(int j=1;j<=i;j++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+class Thread2 extends Thread
+{
+    int b;
+    Thread2(int i)
+    {
+        b=i;
+    }
+    public void run()
+    {
+        for(int i=1;i<=b;i++)
+        {
+            for(int j=1;j<=b;j++)
+            {
+                System.out.print("#");
+            }
+            System.out.println();
+        }
+    }
+}
+
+class Demo
+{
+    public static void main(String[] args)
+    {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        Thread1 t1=new Thread1(n);
+        Thread2 t2=new Thread2(n);
+        t1.start();
+        t2.start();
+        try
+        {
+            t1.join();
+            t2.join();
+        }
+        catch(Exception e){
+        }
+        
+    }
+}*/
+
+//Practise
+/*import java.util.Scanner;
+class Calc
+{
+    private int n;
+    private boolean isbin;
+    private int r;
+    Calc(int r)
+    {
+        this.r=r;
+        this.n=0;
+        isbin=false;
+    }
+    void Bin(int n)
+    {
+        String str=Integer.toBinaryString(n);
+        System.out.println("Binary: "+str);
+    }
+    void Hex(int n)
+    {
+        String str=Integer.toHexString(n);
+        System.out.println("Hexa: "+str);
+    }
+    public synchronized void printBin()
+    {
+        while(n<r)
+        {
+            if(isbin)
+            {
+                Bin(n);
+                isbin=false;
+                n++;
+                notify();
+            }
+            else
+            {
+                try
+                {
+                    wait();
+                }
+                catch(Exception e)
+                {
+                    System.out.println(e);
+                }
+            }
+        }
+    }
+    public synchronized void printHex()
+    {
+        while(n<r)
+        {
+            if(!isbin)
+            {
+                Hex(n);
+                isbin=true;
+                n++;
+                notify();
+            }
+            else
+            {
+                try
+                {
+                    wait();
+                }
+                catch(Exception e)
+                {
+                    System.out.println(e);
+                }
+            }
+        }
+    }
+}
+class T1 extends Thread
+{
+    Calc obj1;
+    T1(Calc obj1)
+    {
+        this.obj1=obj1;
+    }
+    public void run()
+    {
+        obj1.printBin();
+    }
+}
+class T2 extends Thread
+{
+    Calc obj2;
+    T2(Calc obj2)
+    {
+        this.obj2=obj2;
+    }
+    public void run()
+    {
+        obj2.printHex();
+    }
+}
+class Demo
+{
+    public static void main(String args[])
+    {
+        try
+        {
+            Scanner sc=new Scanner(System.in);
+            System.out.print("Enter range: ");
+            int r=sc.nextInt();
+            Calc obj=new Calc(r*2);
+            T1 t1=new T1(obj);
+            T2 t2=new T2(obj);
+            t1.start();
+            t2.start();
+        }
+        catch(Exception e)
+        {
+            System.out.println(e);
+        }
+    }
+}*/
+
 //                                                          MODULE 4-FILES AND GENERICS
 
 //Program 69                                                Using Buffered Reader Class
@@ -2077,182 +2257,393 @@ public class Demo
     }
 }*/
 
-//JOIN method try
-/*import java.util.Scanner;
-class Thread1 extends Thread
+//Program 80                                                Demo of Generic Class
+/*public class GenericExample<T>
 {
-    int a;
-    Thread1(int i)
+    T obj;
+    public GenericExample(T anotherobj)
     {
-        a=i;
+        this.obj=anotherobj;
     }
-    public void run()
+    public T getData()
     {
-        for(int i=1;i<=a;i++)
-        {
-            for(int j=1;j<=i;j++)
-            {
-                System.out.print("*");
-            }
-            System.out.println();
-        }
+        return this.obj;
     }
-}
-class Thread2 extends Thread
-{
-    int b;
-    Thread2(int i)
+    public static void main(String args[])
     {
-        b=i;
-    }
-    public void run()
-    {
-        for(int i=1;i<=b;i++)
-        {
-            for(int j=1;j<=b;j++)
-            {
-                System.out.print("#");
-            }
-            System.out.println();
-        }
-    }
-}
-
-class Demo
-{
-    public static void main(String[] args)
-    {
-        Scanner sc=new Scanner(System.in);
-        int n=sc.nextInt();
-        Thread1 t1=new Thread1(n);
-        Thread2 t2=new Thread2(n);
-        t1.start();
-        t2.start();
-        try
-        {
-            t1.join();
-            t2.join();
-        }
-        catch(Exception e){
-        }
-        
+        GenericExample <Integer> actualobj1=new GenericExample<Integer>(100);
+        GenericExample <String> actualobj2=new GenericExample<String>("Java");
+        GenericExample <Float> actualobj3=new GenericExample<Float>(25.9f);
+        System.out.println(actualobj1.getData());
+        System.out.println(actualobj2.getData());
+        System.out.println(actualobj3.getData());
     }
 }*/
 
-//Practise
-import java.util.Scanner;
-class Calc
+//Program 81                                       Demo of Array List
+/*import java.util.*;
+public class Demo
 {
-    private int n;
-    private boolean isbin;
-    private int r;
-    Calc(int r)
+    public static void main(String args[])
     {
-        this.r=r;
-        this.n=0;
-        isbin=false;
+        ArrayList al=new ArrayList();
+        al.add("one");
+        al.add("two");
+        al.add(10);
+        System.out.println(al);
     }
-    void Bin(int n)
+}*/
+
+//Program 82                                          Demo of UnBound Wild Card with anonymous generic class as paramter
+/*import java.util.*;
+class Demo
+{
+    public static void main(String args[])
     {
-        String str=Integer.toBinaryString(n);
-        System.out.println("Binary: "+str);
+        List<Integer> list1=Arrays.asList(1,2,3);
+        List<Double> list2=Arrays.asList(1.1,2.2,3.3);
+        printlist(list1);
+        printlist(list2);
     }
-    void Hex(int n)
+    private static void printlist(List <?> list)
     {
-        String str=Integer.toHexString(n);
-        System.out.println("Hexa: "+str);
+        System.out.println(list);
     }
-    public synchronized void printBin()
+}*/
+
+//Program 83                                     Demo of UpperBound wildcard
+/*import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.List;
+class Demo
+{
+    public static void main(String args[])
     {
-        while(n<r)
+        List<Integer> list1=Arrays.asList(4,5,6,7);
+        System.out.println("Total sum: "+sum(list1));
+        List<Double> list2=Arrays.asList(4.1,5.1,6.1,7.1);
+        System.out.println("Total sum: "+sum(list2));
+    }
+    private static double sum(List<? extends Number> list)
+    {
+        double sum=0;
+        for(Number i:list)
         {
-            if(isbin)
-            {
-                Bin(n);
-                isbin=false;
-                n++;
-                notify();
-            }
-            else
-            {
-                try
-                {
-                    wait();
-                }
-                catch(Exception e)
-                {
-                    System.out.println(e);
-                }
-            }
+            sum+=i.doubleValue();
+        }
+        return sum;
+    }
+}*/
+
+//Program 84                          Demo of LowerBound wildcard(some error in parameter)
+/*import java.util.Arrays;
+import java.util.List;
+class Demo
+{
+    public static void main(String args[])
+    {
+        List<Integer> list1=Arrays.asList(4,5,6,7);
+        printOnlyIntegerClassorSuperClass(list1);
+        List<Number> list2=Arrays.asList(4,5,6,7);
+        printOnlyIntegerClassorSuperClass(list2);
+    }
+    private static void printOnlyIntegerClassorSuperClass(List<?Super Integer> list)
+    {
+        System.out.println(list);
+    }
+}*/
+
+//Program 85                        Demo of Generic Method
+/*import java.util.*;
+public class Demo
+{
+    public static <T> void printArray(T[] inputArray)
+    {
+        for (T element : inputArray)
+        {
+            System.out.println(element);
         }
     }
-    public synchronized void printHex()
+
+    public static void main(String args[])
     {
-        while(n<r)
-        {
-            if(!isbin)
-            {
-                Hex(n);
-                isbin=true;
-                n++;
-                notify();
-            }
-            else
-            {
-                try
-                {
-                    wait();
-                }
-                catch(Exception e)
-                {
-                    System.out.println(e);
-                }
-            }
-        }
+        Integer[] intArray = { 1, 2, 3, 4, 5 };
+        String[] strArray = { "Java", "Generics", "Example" };
+        System.out.println("Integer Array:");
+        printArray(intArray);
+        System.out.println("String Array:");
+        printArray(strArray);
+    }
+}*/
+
+//Program 86                    Demo of generic method with multiple type parameter
+/*public class A
+{
+    public static <T,U> void printPair(T first,U second)
+    {
+        System.out.println("First: "+first+" ,Second: "+second);
+    }
+    public static void main(String args[])
+    {
+        printPair("Age",25);
+        printPair(10.5,true);
+    }
+}*/
+
+//Program 87                 With Bounded Types
+/*import java.uitl.*;
+public class Demo
+{
+    public static <T extends Number> double sum(T a,T b)
+    {
+        return a.doubleValue()+b.doubleValue();
+    }
+    public static void main(String args[])
+    {
+        System.out.println("Sum of integers: "+sum(5,10));
+        System.out.println("Sum of doubles: "+sum(4.5,3.2));
+    }
+}*/
+
+//Program 88                                          Demo of Generic Interface(errors)
+/*import java.util.*;
+public interface Container<T>
+{
+    void add(T item);
+    T get();
+}
+public class Demo implements Container<Integer>
+{
+    private Integer item;
+    public void add(Integer item)
+    {
+        this.item=item;
+    }
+    public Integer get()
+    {
+        return item;
     }
 }
-class T1 extends Thread
+public class Demo2 implements Container<String>
 {
-    Calc obj1;
-    T1(Calc obj1)
+    private String item;
+    public void add(String item)
+    {
+        this.item=item;
+    }
+    public String get()
+    {
+        return item;
+    }
+}
+public class Pgm
+{
+    public static void main(String args[])
+    {
+        Container<Integer> intContainer=new Demo();
+        intContainer.add(123);
+        System.out.println(intContainer.get());
+        Container<String> stringContainer=new Demo2();
+        stringContainer.add("Java");
+        System.out.println(stringContainer.get());
+    }
+}*/
+
+//Program 89                              Demo of Generic SuperClass(Generic Class Hierarchy)
+/*import java.io.*;
+class Generic1<T>
+{
+    T obj1;
+    Generic1(T obj1)
     {
         this.obj1=obj1;
     }
-    public void run()
+    T getObj1()
     {
-        obj1.printBin();
+        return obj1;
     }
 }
-class T2 extends Thread
+class Generic2<T,V> extends Generic1<T>
 {
-    Calc obj2;
-    T2(Calc obj2)
+    V obj2;
+    Generic2(T obj1,V obj2)
     {
+        super(obj1);
         this.obj2=obj2;
     }
-    public void run()
+    V getObj2()
     {
-        obj2.printHex();
+        return obj2;
     }
 }
 class Demo
 {
     public static void main(String args[])
     {
-        try
-        {
-            Scanner sc=new Scanner(System.in);
-            System.out.print("Enter range: ");
-            int r=sc.nextInt();
-            Calc obj=new Calc(r*2);
-            T1 t1=new T1(obj);
-            T2 t2=new T2(obj);
-            t1.start();
-            t2.start();
-        }
-        catch(Exception e)
-        {
-            System.out.println(e);
-        }
+        Generic2<String,Integer> x=new Generic2<String,Integer>("value: ",100);
+        System.out.println(x.getObj1());
+        System.out.println(x.getObj2());
+    }
+}*/
+
+//Program 90                                     Demo of Non-Generic Super Class(error)
+/*import java.io.*;
+class NonGen
+{
+    int i;
+    NonGen(int i)
+    {
+        this.i=i;
+    }
+    int getVal()
+    {
+        return i;
     }
 }
+class Gen<T> extends NonGen
+{
+    T obj1;
+    Gen(T obj1,int i)
+    {
+        this.obj1=obj1;
+        super(i);
+    }
+    T getObj()
+    {
+        return obj1;
+    }
+}
+class Demo
+{
+    public static void main(String args[])
+    {
+        Gen<String> w=new Gen<String>("Hello",2021);
+        System.out.println(w.getObj()+" "+w.getVal());
+    }
+}*/
+
+//                                                  STRINGS AND LAMBDA EXPRESSIONS
+
+//Program 91                              Demo of toString method
+/*class Box
+{
+    double w,h,d;
+    Box(double h,double w,double d)
+    {
+        this.w=w;
+        this.h=h;
+        this.d=d;
+    }
+    public String toString()
+    {
+        return "Dimensions are "+w+" by "+d+" by "+h;
+    }
+}
+class Demo
+{
+    public static void main(String args[])
+    {
+        Box b=new Box(10,12,14);
+        String s="Box b: "+b;
+        System.out.println(b);
+        System.out.println(s);
+    }
+}*/
+
+//Program 92
+/*class Demo
+{
+    public static void main(String args[])
+    {
+        String s1="Hello";
+        String s2=new String(s1);
+        System.out.println(s1.equals(s2));  //Checks content(true)
+        System.out.println(s1==s2);         //Checks object reference(false)
+    }
+}*/
+
+//Program 93: Demo of compareTo()
+
+//Program 94                          Demo of Lambda
+/*import java.io.*;
+interface If1
+{
+    boolean fun(int n);
+}
+class Demo
+{
+    public static void main(String args[])
+    {
+        If1 isEven=(n)->(n%2==0);
+        if(isEven.fun(21))
+        {
+            System.out.println("21 is even");
+        }
+        else
+        {
+            System.out.println("21 is odd");
+        }
+    }
+}*/
+
+//Program 95                     Demo without and with Lambda
+//Without Lambda
+/*interface MyName
+{
+    public void SayMyName();
+}
+class Demo
+{
+    public static void main(String args[])
+    {
+        MyName obj=new MyName()
+        {
+            public void SayMyName()
+            {
+                System.out.println("Welcome");
+            }
+        };
+        obj.SayMyName();
+    }
+}*/
+//With Lambda
+/*interface MyName
+{
+    public void SayMyName();
+}
+class Demo
+{
+    public static void main(String args[])
+    {
+        MyName obj=()->{System.out.println("Welcome");};
+        obj.SayMyName();
+    }
+}*/
+
+//Program 96                   Demo with single parameter
+/*interface Speaker
+{
+    public String say(String name);
+}
+public class Demo
+{
+    public static void main(String args[])
+    {
+        Speaker s1=(name)->{return "Hello "+name;};
+        System.out.println(s1.say("world"));
+    }
+}*/
+
+//Program 97                  Demo with multiple parameters
+/*interface Mul
+{
+    public void mul(int a,int b);
+}
+class Demo
+{
+    public static void main(String args[])
+    {
+        Mul obj=(a,b)->{System.out.println("Product: "+a*b);};
+        obj.mul(5,2);
+    }
+}*/

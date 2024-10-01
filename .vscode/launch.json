@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Pgm",
+            "request": "launch",
+            "mainClass": "Pgm",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "A",
+            "request": "launch",
+            "mainClass": "A",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "GenericExample",
+            "request": "launch",
+            "mainClass": "GenericExample",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
             "name": "Comm",
             "request": "launch",
             "mainClass": "Comm",
