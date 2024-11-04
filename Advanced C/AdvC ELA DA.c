@@ -630,7 +630,7 @@ int main()
             else
             {
                 int ctr=0;
-                for(int j=1;j<=1;j++)
+                for(int j=1;j<=i;j++)
                 {
                     if(i%j==0)
                     {
@@ -664,3 +664,58 @@ int main()
     } while (n!=0);
     return 0;
  }
+
+/*#include <stdio.h>
+int check_positive(char review[])
+{
+    for (int i = 0; review[i] != '\0'; i++)
+    {
+        if (review[i] == 'e' && review[i+1] == 'a' && review[i+2] == 's' && review[i+3] == 'y')
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+int check_negative(char review[])
+{
+    for (int i = 0; review[i] != '\0'; i++)
+    {
+        if ((review[i] == 'w' && review[i+1] == 'a' && review[i+2] == 's' && review[i+3] == 't' && review[i+4] == 'e') ||
+            (review[i] == 'd' && review[i+1] == 'o' && review[i+2] == 'n' && review[i+3] == 't'))
+        {
+            return 1;
+        }
+    }
+    return 0;
+}
+int main()
+{
+    int box1 = 0, box2 = 0, rank = 0;
+    char reviews[3][100] ={"The product is easy to use.","The product is total waste.", "dont buy this brand."};
+    for (int i = 0; i < 3; i++)
+    {
+        if (check_positive(reviews[i]))
+        {
+            box1++;
+        }
+        else if (check_negative(reviews[i]))
+        {
+            box2++;
+        }
+        if (box1 >= 10)
+        {
+            rank++;
+            box1 = 0;
+        }
+        if (box2 >= 5)
+        {
+            rank--;
+            box2 = 0;
+        }
+    }
+    printf("Box1: No. of Tokens: %d\n", box1);
+    printf("Box2: No. of Tokens: %d\n", box2);
+    printf("Rank: %d\n", rank);
+    return 0;
+}*/

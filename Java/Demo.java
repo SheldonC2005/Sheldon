@@ -1736,39 +1736,59 @@ public class Main
 //Program 68                                                  Inter Thread Communication in Multi Threading
 /*class A
 {
-    int i;
-    boolean flag=false;
-    synchronized void deliver(int i)
+    int i=1,j=1;
+    int n;
+    boolean flag=true;
+    A(int n)
     {
-        if(!flag)
+        this.n=n;
+    }
+    synchronized void deliver()
+    {
+        while(i<=n)
         {
-            try
+            if(flag)
             {
-                Thread.sleep(1000);
+                System.out.println("Data delivered "+i);
+                i++;
+                flag=false;
+                notify();
             }
-            catch(InterruptedException e)
+            else
             {
-                System.out.println(e);
+                try
+                {
+                    wait();
+                }
+                catch(InterruptedException e)
+                {
+                    System.out.println(e);
+                }
             }
-            this.i=i;
-            flag=true;
-            System.out.println("Data delivered "+i);
-            notify();
         }
-        else if(flag)
+    }
+    synchronized void recieve()
+    {
+        while(j<=n)
         {
-            try
+            if(!flag)
             {
-                Thread.sleep(1000);
+                System.out.println("Data recieved "+j);
+                flag=true;
+                j++;
+                notify();
             }
-            catch(InterruptedException e)
+            else
             {
-                System.out.println(e);
+                try
+                {
+                    wait();
+                }
+                catch(InterruptedException e)
+                {
+                    System.out.println(e);
+                }
             }
-            this.i=i;
-            flag=false;
-            System.out.println("Data recieved "+i);
-            notify();
         }
     }
 }
@@ -1781,10 +1801,7 @@ class Thread1 extends Thread
     }
     public void run()
     {
-        for(int j=0;j<5;j++)
-        {
-            obj.deliver(j);
-        }
+        obj.deliver();
     }
 }
 class Thread2 extends Thread
@@ -1796,17 +1813,15 @@ class Thread2 extends Thread
     }
     public void run()
     {
-        for(int k=0;k<5;k++)
-        {
-            obj.deliver(k);
-        }
+        obj.recieve();
     }
 }
 public class Comm
 {
     public static void main(String args[])
     {
-        A obj=new A();
+        
+        A obj=new A(5);
         Thread1 t1=new Thread1(obj);
         Thread2 t2=new Thread2(obj);
         t1.start();
@@ -2065,10 +2080,10 @@ class Demo
 {
     public static void main(String args[])
     {
-        String data="Computer";
+        double data=52.1;
         try
         {
-            PrintWriter output=new PrintWriter("output.txt");
+            PrintWriter output=new PrintWriter("sample.txt");
             output.print(data);
             output.close();
         }
@@ -2095,6 +2110,10 @@ class Demo
         catch(Exception e)
         {
             e.getStackTrace();
+        }
+        finally
+        {
+            System.out.println("Code Execeuted");
         }
     }
 }*/
@@ -2281,18 +2300,20 @@ public class Demo
 }*/
 
 //Program 81                                       Demo of Array List
-/*import java.util.*;
+import java.util.*;
 public class Demo
 {
     public static void main(String args[])
     {
         ArrayList al=new ArrayList();
         al.add("one");
-        al.add("two");
+        al.add("three");
         al.add(10);
+        al.add(5.21);
+        al.add(1,"two");
         System.out.println(al);
     }
-}*/
+}
 
 //Program 82                                          Demo of UnBound Wild Card with anonymous generic class as paramter
 /*import java.util.*;
@@ -2335,7 +2356,7 @@ class Demo
     }
 }*/
 
-//Program 84                          Demo of LowerBound wildcard(some error in parameter)
+//Program 84                          Demo of LowerBound wildcard
 /*import java.util.Arrays;
 import java.util.List;
 class Demo
@@ -2344,10 +2365,10 @@ class Demo
     {
         List<Integer> list1=Arrays.asList(4,5,6,7);
         printOnlyIntegerClassorSuperClass(list1);
-        List<Number> list2=Arrays.asList(4,5,6,7);
+        List<Number> list2=Arrays.asList(8,9,10,11);
         printOnlyIntegerClassorSuperClass(list2);
     }
-    private static void printOnlyIntegerClassorSuperClass(List<?Super Integer> list)
+    private static void printOnlyIntegerClassorSuperClass(List<? super Integer> list)
     {
         System.out.println(list);
     }
@@ -2357,11 +2378,11 @@ class Demo
 /*import java.util.*;
 public class Demo
 {
-    public static <T> void printArray(T[] inputArray)
+    public static <T> void printArray(T inputArray[])
     {
         for (T element : inputArray)
         {
-            System.out.println(element);
+            System.out.print(element+" ");
         }
     }
 
@@ -2371,7 +2392,7 @@ public class Demo
         String[] strArray = { "Java", "Generics", "Example" };
         System.out.println("Integer Array:");
         printArray(intArray);
-        System.out.println("String Array:");
+        System.out.println("\nString Array:");
         printArray(strArray);
     }
 }*/

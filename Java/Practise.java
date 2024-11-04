@@ -107,36 +107,67 @@ class Demo
     }
 }*/
 
-/*
-import java.util.*;
+
+/*import java.util.*;
 class Print
 {
     String str;
     boolean met;
     int n,i=0;
     Scanner sc=new Scanner(System.in);
-    Print()
+    Print(int n)
     {
-        this.met=false;
+        this.met=true;
+        this.n=n;
     }
     public synchronized void p1()
-    {
-        if(met)
+    {    
+        while(i<n)
         {
-            str=sc.nextLine();
-            System.out.println("Thread 1: "+str);
-            i++;
-            met=false;
+            if(met)
+            {
+                str=sc.nextLine();
+                System.out.println("Thread 1: "+str);
+                i++;
+                met=false;
+                notify();
+            }
+            else
+            {
+                try
+                {
+                    wait();
+                }
+                catch(Exception e)
+                {
+                    System.out.println(e);
+                }
+            }
         }
     }
     public synchronized void p2()
     {
-        if(!met)
+        while(i<n)
         {
-            str=sc.nextLine();
-            System.out.println("Thread 2: "+str);
-            i++;
-            met=true;
+            if(!met)
+            {
+                str=sc.nextLine();
+                System.out.println("Thread 2: "+str);
+                i++;
+                met=true;
+                notify();
+            }
+            else
+            {
+                try
+                {
+                    wait();
+                }
+                catch(Exception e)
+                {
+                    System.out.println(e);
+                }
+            }
         }
     }
 }
@@ -168,11 +199,13 @@ class Demo
 {
     public static void main(String args[])
     {
-        Print obj=new Print();
+        Scanner sc=new Scanner(System.in);
+        System.out.println("Enter n:");
+        int n=sc.nextInt();
+        Print obj=new Print(n*2);
         T1 t1=new T1(obj);
         T2 t2=new T2(obj);
         t1.start();
         t2.start();
     }
-}
- */
+}*/

@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "RegistrationForm",
+            "request": "launch",
+            "mainClass": "RegistrationForm",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "InsuranceCalculator",
+            "request": "launch",
+            "mainClass": "InsuranceCalculator",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Buffered_Demo",
+            "request": "launch",
+            "mainClass": "Buffered_Demo",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
             "name": "Pgm",
             "request": "launch",
             "mainClass": "Pgm",
