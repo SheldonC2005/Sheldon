@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MyThread",
+            "request": "launch",
+            "mainClass": "MyThread",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Pgm1",
+            "request": "launch",
+            "mainClass": "Pgm1",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "ToDoListApp",
+            "request": "launch",
+            "mainClass": "ToDoListApp",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
             "name": "RegistrationForm",
             "request": "launch",
             "mainClass": "RegistrationForm",

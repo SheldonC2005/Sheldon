@@ -1679,7 +1679,7 @@ public class ThreadPriority
 }*/
 
 //Program 67                                           Synchronization in Multi Threading
-/*class Table
+class Table
 {
     synchronized void print(int val)
     {
@@ -1731,7 +1731,7 @@ public class Main
         t1.start();
         t2.start();
     }
-}*/
+}
 
 //Program 68                                                  Inter Thread Communication in Multi Threading
 /*class A
@@ -2300,7 +2300,7 @@ public class Demo
 }*/
 
 //Program 81                                       Demo of Array List
-import java.util.*;
+/*import java.util.*;
 public class Demo
 {
     public static void main(String args[])
@@ -2313,7 +2313,7 @@ public class Demo
         al.add(1,"two");
         System.out.println(al);
     }
-}
+}*/
 
 //Program 82                                          Demo of UnBound Wild Card with anonymous generic class as paramter
 /*import java.util.*;

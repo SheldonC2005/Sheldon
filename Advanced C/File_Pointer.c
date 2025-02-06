@@ -21,7 +21,7 @@
     }
 }*/
 
-//                                                   File Reading
+//                                                       File Reading
 /*void main()
 {
     FILE *ptr;
