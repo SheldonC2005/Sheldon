@@ -39,7 +39,6 @@ void ver(char rec[], char ds[])
     char r[100];
     bd(rec, ds, r);
     printf("\nReceiver Side:\n");
-    printf("Remainder: %s\n", r + strlen(rec) - strlen(ds) + 1);
     int v = 1;
     for (int i = strlen(rec) - strlen(ds) + 1; i < strlen(rec); i++)
     {
@@ -50,15 +49,15 @@ void ver(char rec[], char ds[])
         }
     }
     if (v)
-        printf("Status: Data Accepted\n");
+        printf("Remainder:0\nStatus: Data Accepted\n");
     else
-        printf("Status: Data Discarded\n");
+        printf("Remainder!=0\nStatus: Data Discarded\n");
 }
 
 int main()
 {
     char d[100], ds[100], cw[100], rec[100];
-    char choice;
+    char ch[0];
     printf("Enter data:");
     scanf("%s", d);
     printf("Enter divisor:");
@@ -69,12 +68,12 @@ int main()
     strcpy(rec, cw);
     printf("\nReceiver Side:\n");
     printf("Received code word: %s\n", rec);
-    printf("Bit Alteration? (y/n):");
-    scanf("%c", &choice);
-    if (choice == 'y' || choice == 'Y')
+    printf("Bit Alteration? (y/n):\n");
+    scanf("%s", &ch);
+    if (ch[0] == 'y' || ch[0] == 'Y')
     {
         printf("Enter new data:");
-        scanf("%s", rec);
+        scanf("%s", &rec);
     }
     ver(rec, ds);
     return 0;

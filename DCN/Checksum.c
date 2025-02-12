@@ -41,7 +41,7 @@ int main()
     scanf("%d", &n);
     int d[k];
     char ip[n + 1];
-    printf("Enter data seperated by space for each section:\n", k, n);
+    printf("Enter data seperated by space for each section:\n");
     for (int i = 0; i < k; i++)
     {
         scanf("%s", ip);
@@ -78,7 +78,7 @@ int main()
     {
         int i;
         char nb[n + 1];
-        printf("Enter the frame index and new data bits seperated by a space:", k, n);
+        printf("Enter the frame index and new data bits seperated by a space:");
         scanf("%d %s", &i, nb);
         if (i >= 0 && i <= k)
         {
