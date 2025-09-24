@@ -1,7 +1,5 @@
 package Softskills;
 
-import java.io.*;
-
 class Euler {
     static int phi(int n) {
         int result = n;

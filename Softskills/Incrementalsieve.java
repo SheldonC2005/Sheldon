@@ -20,7 +20,7 @@ class Incrementalsieve {
     }
 
     static ArrayList<Integer> generatePrimes(int n) {
-        ArrayList<Integer> al = new ArrayList();
+        ArrayList<Integer> al = new ArrayList<Integer>();
         for (int i = 2; i < Math.sqrt(n); i++) {
             if (arr[i] == true) {
                 al.add(i);
@@ -55,5 +55,6 @@ class Incrementalsieve {
                 System.out.print(i + " ");
             }
         }
+        sc.close();
     }
 }

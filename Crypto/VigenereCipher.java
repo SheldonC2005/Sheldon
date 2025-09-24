@@ -1,5 +1,3 @@
-package Crypto;
-
 import java.util.Scanner;
 
 public class VigenereCipher {

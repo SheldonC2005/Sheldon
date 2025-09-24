@@ -36,5 +36,6 @@ class Remainder {
             p = p * m[i];
         }
         System.out.println("The solution is " + CRT(a, m, size, p));
+        sc.close();
     }
 }
