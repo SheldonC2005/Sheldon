@@ -1,68 +1,72 @@
 #include <stdio.h>
+#include <string.h>
 #include <stdlib.h>
 #include <time.h>
-
-void reciever(int ack[], int f, int suc[], int att[])
+void sendframe(char bit, int frameno)
 {
-    for (int i = 0; i < f; i++)
-    {
-        if (ack[i] == 0)
-        {
-            att[0]++;
-            if (rand() % 10 < 8)
-            {
-                ack[i] == 1;
-                suc[0]++;
-                printf("Receiver:Acknowledge frame %d\n", i);
-            }
-            else
-            {
-                printf("Reciever:Acknowledgement of %d is lost\n", i);
-            }
-        }
-    }
+    printf("Sender: Sending frame %d -> %c\n", frameno, bit);
 }
-void sender(int f, int w)
+int recieveframe(char bit, int frameno)
 {
-    int ack[100] = {0};
-    srand(time(0));
-    int b = 0;
-    int suc[1] = {0};
-    int att[1] = {0};
-    while (b < f)
+    printf("Receiver: Received frame %d -> %c\n", frameno, bit);
+    int c = rand() % 100;
+    if (c < 80)
     {
-        for (int i = 0; i < w && b + i < f; i++)
-        {
-            if (ack[b + i] == 0)
-            {
-                printf("Sender: Frame %d\n", b + i);
-            }
-        }
-        reciever(ack, f, suc, att);
-        for (int i = b; i < b + w && i < f; i++)
-        {
-            if (ack[i] == 0)
-            {
-                printf("Sender: Timeout.Resend %d\n", i);
-                att[0]++;
-            }
-        }
-        while (b < f && ack[b] == 1)
-        {
-            b++;
-        }
+        printf("Reciever: Sending ACK for frame %d\n", frameno);
+        return 1;
     }
-    float rate = ((float)suc[0] / att[0]) * 100;
-    printf("Success rate: %.2f%%\n", rate);
+    else
+    {
+        printf("Receiver: ACK for frame %d lost!\n", frameno);
+        return 0;
+    }
 }
 int main()
 {
-    int f, w;
-    printf("Enter no of frames:");
-    scanf("%d", &f);
-    printf("Enter window size:");
-    scanf("%d", &w);
-    sender(f, w);
-    printf("All frames sent");
+    char data[1024];
+    int base = 0, next = 0;
+    srand(time(NULL));
+    printf("Enter data to send: ");
+    fgets(data, 1024, stdin);
+    data[strcspn(data, "\n")] = '\0';
+    int len = strlen(data);
+    while (base < len)
+    {
+        while (next < base + 4 && next < len)
+        {
+            sendframe(data[next], next);
+            next++;
+        }
+        for (int i = base; i < next; i++)
+        {
+            int ackr = 0, retry = 0;
+            while (!ackr && retry < 3)
+            {
+                clock_t start = clock();
+                while ((((double)(clock() - start)) / CLOCKS_PER_SEC) < 2)
+                {
+                    ackr = recieveframe(data[i], i);
+                    if (ackr)
+                    {
+                        printf("Sender: ACK received for frame %d\n", i);
+                        break;
+                    }
+                }
+                if (!ackr)
+                {
+                    printf("Sender timeout\n");
+                    next = i;
+                    break;
+                }
+            }
+            if (!ackr)
+            {
+                printf("Terminating\n");
+                return 0;
+            }
+            base = i + 1;
+        }
+    }
+    printf("Transmission complete\n");
     return 0;
 }

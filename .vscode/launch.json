@@ -2,6 +2,83 @@
     "configurations": [
         {
             "type": "java",
+            "name": "sample",
+            "request": "launch",
+            "mainClass": "sample",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Remainder",
+            "request": "launch",
+            "mainClass": "Softskills.Remainder",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Playfair",
+            "request": "launch",
+            "mainClass": "Crypto.Playfair",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Strobo",
+            "request": "launch",
+            "mainClass": "Softskills.Strobo",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Euler",
+            "request": "launch",
+            "mainClass": "Softskills.Euler",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Incrementalsieve",
+            "request": "launch",
+            "mainClass": "Softskills.Incrementalsieve",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Simplesieve",
+            "request": "launch",
+            "mainClass": "Softskills.Simplesieve",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Simplesieve",
+            "request": "launch",
+            "mainClass": "Simplesieve",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "VigenereCipher",
+            "request": "launch",
+            "mainClass": "Crypto.VigenereCipher",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Vignere",
+            "request": "launch",
+            "mainClass": "Crypto.Vignere",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "PlayfairCipher",
+            "request": "launch",
+            "mainClass": "Crypto.PlayfairCipher",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
             "name": "MyThread",
             "request": "launch",
             "mainClass": "MyThread",
