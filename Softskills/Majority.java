@@ -18,12 +18,7 @@ class Majority {
                 index = i;
             }
         }
-        if (maxCount > n / 2) {
-            System.out.println("Majority element is: " +
-                    arr[index]);
-        } else {
-            System.out.println("No majority element.");
-        }
+        System.out.println("Majority element is: " + arr[index]);
     }
 
     public static void main(String[] args) {

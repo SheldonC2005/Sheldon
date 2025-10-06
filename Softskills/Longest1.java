@@ -1,8 +1,7 @@
 package Softskills;
 
 class Longest1 {
-    private static int findMaxConsecutiveOnes(int[] a,
-            int k) {
+    private static int findMaxConsecutiveOnes(int[] a, int k) {
         int maxOnes = Integer.MIN_VALUE;
         int numReplacements = 0;
         int windowStart = 0;
@@ -16,8 +15,7 @@ class Longest1 {
                 }
                 windowStart++;
             }
-            maxOnes = Math.max(maxOnes,
-                    windowEnd - windowStart + 1);
+            maxOnes = Math.max(maxOnes, windowEnd - windowStart + 1);
         }
         return maxOnes;
     }

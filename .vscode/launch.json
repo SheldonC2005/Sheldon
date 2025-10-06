@@ -2,6 +2,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Longest1",
+            "request": "launch",
+            "mainClass": "Softskills.Longest1",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Majority",
+            "request": "launch",
+            "mainClass": "Softskills.Majority",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Equilibrium",
+            "request": "launch",
+            "mainClass": "Softskills.Equilibrium",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
             "name": "MaxProduct",
             "request": "launch",
             "mainClass": "Softskills.MaxProduct",

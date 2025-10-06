@@ -6,14 +6,14 @@ class Equilibrium {
     static int findMaxSum(int[] arr, int n) {
         int res = Integer.MIN_VALUE;
         for (int i = 0; i < n; i++) {
-            int prefix_sum = arr[i];
+            int left_sum = 0;
             for (int j = 0; j < i; j++)
-                prefix_sum += arr[j];
-            int suffix_sum = arr[i];
-            for (int j = n - 1; j > i; j--)
-                suffix_sum += arr[j];
-            if (prefix_sum == suffix_sum)
-                res = Math.max(res, prefix_sum);
+                left_sum += arr[j];
+            int right_sum = 0;
+            for (int j = i + 1; j < n; j++)
+                right_sum += arr[j];
+            if (left_sum == right_sum)
+                res = Math.max(res, left_sum + arr[i] + right_sum);
         }
         return res;
     }
