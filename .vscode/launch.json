@@ -2,6 +2,69 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MaxProduct",
+            "request": "launch",
+            "mainClass": "Softskills.MaxProduct",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Hourglass",
+            "request": "launch",
+            "mainClass": "Softskills.Hourglass",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Leaders",
+            "request": "launch",
+            "mainClass": "Softskills.Leaders",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Karatsuba",
+            "request": "launch",
+            "mainClass": "Softskills.Karatsuba",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Euclid",
+            "request": "launch",
+            "mainClass": "Softskills.Euclid",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Booth",
+            "request": "launch",
+            "mainClass": "Softskills.Booth",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "BlockSwap",
+            "request": "launch",
+            "mainClass": "Softskills.BlockSwap",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Main",
+            "request": "launch",
+            "mainClass": "Softskills.Main",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "SHA512",
+            "request": "launch",
+            "mainClass": "SHA512",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
             "name": "sample",
             "request": "launch",
             "mainClass": "sample",
