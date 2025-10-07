@@ -2,6 +2,20 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SwapNibbles",
+            "request": "launch",
+            "mainClass": "Softskills.SwapNibbles",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Trial",
+            "request": "launch",
+            "mainClass": "Softskills.Trial",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
             "name": "Longest1",
             "request": "launch",
             "mainClass": "Softskills.Longest1",
