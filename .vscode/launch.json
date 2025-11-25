@@ -2,6 +2,55 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Weighted",
+            "request": "launch",
+            "mainClass": "Softskills.Weighted",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "NaturalSort",
+            "request": "launch",
+            "mainClass": "Softskills.NaturalSort",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Movehyphen",
+            "request": "launch",
+            "mainClass": "Softskills.Movehyphen",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Maze",
+            "request": "launch",
+            "mainClass": "Softskills.Maze",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Maneuvering",
+            "request": "launch",
+            "mainClass": "Softskills.Maneuvering",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Josephus",
+            "request": "launch",
+            "mainClass": "Softskills.Josephus",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
+            "name": "Combinations",
+            "request": "launch",
+            "mainClass": "Softskills.Combinations",
+            "projectName": "Sheldon_879409a7"
+        },
+        {
+            "type": "java",
             "name": "SwapNibbles",
             "request": "launch",
             "mainClass": "Softskills.SwapNibbles",
