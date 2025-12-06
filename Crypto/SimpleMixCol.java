@@ -1,5 +1,3 @@
-package Crypto;
-
 /**
  * A simplified implementation of the MixColumns operation in the AES algorithm.
  * This class demonstrates the transformation on a 4x4 state matrix.
