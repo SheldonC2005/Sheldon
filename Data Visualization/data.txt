@@ -1,0 +1,6 @@
+Regno,Name,Age,Address,Marks
+001,Mark,19,Vellore,91
+002,John,20,Chennai,90
+003,Doe,18,Bangalore,85
+004,Matthew,21,Delhi,90
+005,Charlie,17,Coimbatore,89
