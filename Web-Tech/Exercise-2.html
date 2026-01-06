@@ -1,19 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TechMart - United States</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
             font-family: Arial, sans-serif;
-            background-color: #f5f5f5;
         }
 
         header {
@@ -21,141 +12,28 @@
             color: white;
             padding: 20px;
             text-align: center;
-            border: 6px solid #e74c3c;
-            margin-bottom: 20px;
-        }
-
-        header h1 {
-            margin-bottom: 10px;
-        }
-
-        .region-toggle {
-            background-color: #3498db;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 16px;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px;
-        }
-
-        .region-toggle:hover {
-            background-color: #2980b9;
+            border: 2px solid black;
         }
 
         .intro-section {
-            max-width: 1200px;
-            margin: 0 auto 30px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .intro-section h2 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-
-        .intro-section p {
-            line-height: 1.6;
-            margin-bottom: 10px;
-            color: #555;
-        }
-
-        .products-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
+            border: 1px solid #ccc;
+            padding: 15px;
+            margin: 20px;
         }
 
         .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
             list-style: none;
         }
 
         .product-item {
-            background-color: white;
-            border-radius: 8px;
+            border: 1px solid #ccc;
             padding: 15px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-
-        .product-item h3 {
-            color: #2c3e50;
-            margin-bottom: 10px;
-            font-size: 18px;
+            margin: 10px;
         }
 
         .product-image {
             width: 200px;
             height: 200px;
-            object-fit: cover;
-            margin: 10px auto;
-            display: block;
-            border-radius: 5px;
-            transition: all 0.3s ease;
-        }
-
-        .price {
-            font-size: 24px;
-            color: #27ae60;
-            font-weight: bold;
-            margin: 10px 0;
-        }
-
-        .description {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 15px;
-        }
-
-        .image-controls {
-            margin-top: 10px;
-        }
-
-        .zoom-btn {
-            background-color: #95a5a6;
-            color: white;
-            border: none;
-            padding: 8px 15px;
-            margin: 0 5px;
-            cursor: pointer;
-            border-radius: 4px;
-            font-size: 14px;
-        }
-
-        .zoom-btn:hover {
-            background-color: #7f8c8d;
-        }
-
-        .features-section {
-            max-width: 1200px;
-            margin: 30px auto;
-            padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        }
-
-        .features-section h2 {
-            color: #2c3e50;
-            margin-bottom: 15px;
-        }
-
-        .features-list {
-            list-style-type: disc;
-            margin-left: 40px;
-            color: #555;
-        }
-
-        .features-list li {
-            margin-bottom: 8px;
-            line-height: 1.6;
         }
 
         footer {
@@ -163,21 +41,21 @@
             color: white;
             text-align: center;
             padding: 15px;
-            margin-top: 30px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>🛍️ TechMart USA</h1>
+        <h1>Forten USA</h1>
         <p>Your Premium Online Shopping Destination</p>
         <button class="region-toggle" onclick="window.location.href='Exercise-2-UK.html'">
-            Switch to UK Store 🇬🇧
+            Switch to UK Store
         </button>
     </header>
 
     <div class="intro-section">
-        <h2>Welcome to TechMart USA</h2>
+        <h2>Welcome to Forten USA</h2>
         <p>
             Discover the best deals on premium electronics and gadgets! We offer a wide range of products 
             from top brands with competitive prices and fast shipping across the United States. All prices 
@@ -200,8 +78,8 @@
                 <p class="price">$129.99</p>
                 <p class="description">Premium noise-canceling headphones with 30-hour battery life</p>
                 <div class="image-controls">
-                    <button class="zoom-btn" onclick="enlargeImage('img1')">➕ Enlarge</button>
-                    <button class="zoom-btn" onclick="shrinkImage('img1')">➖ Shrink</button>
+                    <button class="zoom-btn" onclick="enlargeImage('img1')">Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img1')">Shrink</button>
                 </div>
             </li>
 
@@ -212,8 +90,8 @@
                 <p class="price">$299.99</p>
                 <p class="description">Fitness tracking, heart rate monitor, and GPS navigation</p>
                 <div class="image-controls">
-                    <button class="zoom-btn" onclick="enlargeImage('img2')">➕ Enlarge</button>
-                    <button class="zoom-btn" onclick="shrinkImage('img2')">➖ Shrink</button>
+                    <button class="zoom-btn" onclick="enlargeImage('img2')">Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img2')">Shrink</button>
                 </div>
             </li>
 
@@ -224,8 +102,8 @@
                 <p class="price">$89.99</p>
                 <p class="description">RGB backlit gaming keyboard with tactile switches</p>
                 <div class="image-controls">
-                    <button class="zoom-btn" onclick="enlargeImage('img3')">➕ Enlarge</button>
-                    <button class="zoom-btn" onclick="shrinkImage('img3')">➖ Shrink</button>
+                    <button class="zoom-btn" onclick="enlargeImage('img3')">Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img3')">Shrink</button>
                 </div>
             </li>
 
@@ -236,8 +114,8 @@
                 <p class="price">$49.99</p>
                 <p class="description">Ergonomic design with precision tracking</p>
                 <div class="image-controls">
-                    <button class="zoom-btn" onclick="enlargeImage('img4')">➕ Enlarge</button>
-                    <button class="zoom-btn" onclick="shrinkImage('img4')">➖ Shrink</button>
+                    <button class="zoom-btn" onclick="enlargeImage('img4')">Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img4')">Shrink</button>
                 </div>
             </li>
 
@@ -248,8 +126,8 @@
                 <p class="price">$39.99</p>
                 <p class="description">7-in-1 adapter with HDMI, USB 3.0, and SD card reader</p>
                 <div class="image-controls">
-                    <button class="zoom-btn" onclick="enlargeImage('img5')">➕ Enlarge</button>
-                    <button class="zoom-btn" onclick="shrinkImage('img5')">➖ Shrink</button>
+                    <button class="zoom-btn" onclick="enlargeImage('img5')">Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img5')">Shrink</button>
                 </div>
             </li>
 
@@ -260,20 +138,20 @@
                 <p class="price">$34.99</p>
                 <p class="description">20,000mAh power bank with fast charging</p>
                 <div class="image-controls">
-                    <button class="zoom-btn" onclick="enlargeImage('img6')">➕ Enlarge</button>
-                    <button class="zoom-btn" onclick="shrinkImage('img6')">➖ Shrink</button>
+                    <button class="zoom-btn" onclick="enlargeImage('img6')">Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img6')">Shrink</button>
                 </div>
             </li>
 
             <li class="product-item">
                 <h3>Webcam HD</h3>
-                <img src="https://images.unsplash.com/photo-1589490047559-a1c3f4b0f3b1?w=400&h=400&fit=crop" 
+                <img src="https://images.unsplash.com/photo-1527150122806-f682d2fd8b09?w=400&h=400&fit=crop" 
                      alt="Webcam" class="product-image" id="img7">
                 <p class="price">$79.99</p>
                 <p class="description">1080p HD webcam with built-in microphone</p>
                 <div class="image-controls">
-                    <button class="zoom-btn" onclick="enlargeImage('img7')">➕ Enlarge</button>
-                    <button class="zoom-btn" onclick="shrinkImage('img7')">➖ Shrink</button>
+                    <button class="zoom-btn" onclick="enlargeImage('img7')">Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img7')">Shrink</button>
                 </div>
             </li>
 
@@ -284,29 +162,15 @@
                 <p class="price">$19.99</p>
                 <p class="description">Adjustable aluminum phone and tablet stand</p>
                 <div class="image-controls">
-                    <button class="zoom-btn" onclick="enlargeImage('img8')">➕ Enlarge</button>
-                    <button class="zoom-btn" onclick="shrinkImage('img8')">➖ Shrink</button>
+                    <button class="zoom-btn" onclick="enlargeImage('img8')">Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img8')">Shrink</button>
                 </div>
             </li>
         </ul>
     </div>
 
-    <div class="features-section">
-        <h2>Why Shop With Us?</h2>
-        <ul class="features-list">
-            <li>Free shipping on all orders over $50</li>
-            <li>30-day money-back guarantee on all products</li>
-            <li>Secure payment processing with SSL encryption</li>
-            <li>24/7 customer support via phone, email, and live chat</li>
-            <li>Exclusive deals and discounts for registered members</li>
-            <li>Fast delivery within 3-5 business days</li>
-            <li>Authentic products with manufacturer warranties</li>
-            <li>Easy returns and exchanges process</li>
-        </ul>
-    </div>
-
     <footer>
-        <p>&copy; 2026 TechMart USA. All rights reserved. | Region: United States</p>
+        <p>&copy; 2026 Forten. All rights reserved. | Region: United States</p>
     </footer>
 
     <script>
