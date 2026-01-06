@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechMart - United Kingdom</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            border: 6px solid #e74c3c;
+            margin-bottom: 20px;
+        }
+
+        header h1 {
+            margin-bottom: 10px;
+        }
+
+        .region-toggle {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .region-toggle:hover {
+            background-color: #2980b9;
+        }
+
+        .intro-section {
+            max-width: 1200px;
+            margin: 0 auto 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .intro-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .intro-section p {
+            line-height: 1.6;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .products-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            list-style: none;
+        }
+
+        .product-item {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .product-item h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 18px;
+        }
+
+        .product-image {
+            width: 200px;
+            height: 200px;
+            object-fit: cover;
+            margin: 10px auto;
+            display: block;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .price {
+            font-size: 24px;
+            color: #27ae60;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+
+        .description {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .image-controls {
+            margin-top: 10px;
+        }
+
+        .zoom-btn {
+            background-color: #95a5a6;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .zoom-btn:hover {
+            background-color: #7f8c8d;
+        }
+
+        .features-section {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .features-section h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .features-list {
+            list-style-type: disc;
+            margin-left: 40px;
+            color: #555;
+        }
+
+        .features-list li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🛍️ TechMart UK</h1>
+        <p>Your Premium Online Shopping Destination</p>
+        <button class="region-toggle" onclick="window.location.href='Exercise-2.html'">
+            Switch to US Store 🇺🇸
+        </button>
+    </header>
+
+    <div class="intro-section">
+        <h2>Welcome to TechMart UK</h2>
+        <p>
+            Discover the finest deals on premium electronics and gadgets! We offer a wide range of products 
+            from top brands with competitive prices and rapid delivery across the United Kingdom. All prices 
+            are in British Pounds (£) and include free delivery on orders over £40.
+        </p>
+        <p>
+            Shop with confidence knowing that all our products come with manufacturer warranties and our 
+            30-day money-back guarantee. Our customer service team is available 24/7 to assist you with 
+            any enquiries or concerns.
+        </p>
+    </div>
+
+    <div class="products-container">
+        <h2 style="text-align: center; color: #2c3e50; margin-bottom: 20px;">Featured Products</h2>
+        <ul class="products-grid">
+            <li class="product-item">
+                <h3>Wireless Headphones</h3>
+                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" 
+                     alt="Wireless Headphones" class="product-image" id="img1">
+                <p class="price">£99.99</p>
+                <p class="description">Premium noise-cancelling headphones with 30-hour battery life</p>
+                <div class="image-controls">
+                    <button class="zoom-btn" onclick="enlargeImage('img1')">➕ Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img1')">➖ Shrink</button>
+                </div>
+            </li>
+
+            <li class="product-item">
+                <h3>Smart Watch</h3>
+                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop" 
+                     alt="Smart Watch" class="product-image" id="img2">
+                <p class="price">£229.99</p>
+                <p class="description">Fitness tracking, heart rate monitor, and GPS navigation</p>
+                <div class="image-controls">
+                    <button class="zoom-btn" onclick="enlargeImage('img2')">➕ Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img2')">➖ Shrink</button>
+                </div>
+            </li>
+
+            <li class="product-item">
+                <h3>Mechanical Keyboard</h3>
+                <img src="https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=400&h=400&fit=crop" 
+                     alt="Mechanical Keyboard" class="product-image" id="img3">
+                <p class="price">£69.99</p>
+                <p class="description">RGB backlit gaming keyboard with tactile switches</p>
+                <div class="image-controls">
+                    <button class="zoom-btn" onclick="enlargeImage('img3')">➕ Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img3')">➖ Shrink</button>
+                </div>
+            </li>
+
+            <li class="product-item">
+                <h3>Wireless Mouse</h3>
+                <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=400&h=400&fit=crop" 
+                     alt="Wireless Mouse" class="product-image" id="img4">
+                <p class="price">£38.99</p>
+                <p class="description">Ergonomic design with precision tracking</p>
+                <div class="image-controls">
+                    <button class="zoom-btn" onclick="enlargeImage('img4')">➕ Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img4')">➖ Shrink</button>
+                </div>
+            </li>
+
+            <li class="product-item">
+                <h3>USB-C Hub</h3>
+                <img src="https://images.unsplash.com/photo-1625948515291-69613efd103f?w=400&h=400&fit=crop" 
+                     alt="USB-C Hub" class="product-image" id="img5">
+                <p class="price">£30.99</p>
+                <p class="description">7-in-1 adapter with HDMI, USB 3.0, and SD card reader</p>
+                <div class="image-controls">
+                    <button class="zoom-btn" onclick="enlargeImage('img5')">➕ Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img5')">➖ Shrink</button>
+                </div>
+            </li>
+
+            <li class="product-item">
+                <h3>Portable Charger</h3>
+                <img src="https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400&h=400&fit=crop" 
+                     alt="Portable Charger" class="product-image" id="img6">
+                <p class="price">£26.99</p>
+                <p class="description">20,000mAh power bank with fast charging</p>
+                <div class="image-controls">
+                    <button class="zoom-btn" onclick="enlargeImage('img6')">➕ Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img6')">➖ Shrink</button>
+                </div>
+            </li>
+
+            <li class="product-item">
+                <h3>Webcam HD</h3>
+                <img src="https://images.unsplash.com/photo-1589490047559-a1c3f4b0f3b1?w=400&h=400&fit=crop" 
+                     alt="Webcam" class="product-image" id="img7">
+                <p class="price">£61.99</p>
+                <p class="description">1080p HD webcam with built-in microphone</p>
+                <div class="image-controls">
+                    <button class="zoom-btn" onclick="enlargeImage('img7')">➕ Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img7')">➖ Shrink</button>
+                </div>
+            </li>
+
+            <li class="product-item">
+                <h3>Phone Stand</h3>
+                <img src="https://images.unsplash.com/photo-1601524909162-ae8725290836?w=400&h=400&fit=crop" 
+                     alt="Phone Stand" class="product-image" id="img8">
+                <p class="price">£15.99</p>
+                <p class="description">Adjustable aluminium phone and tablet stand</p>
+                <div class="image-controls">
+                    <button class="zoom-btn" onclick="enlargeImage('img8')">➕ Enlarge</button>
+                    <button class="zoom-btn" onclick="shrinkImage('img8')">➖ Shrink</button>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+    <div class="features-section">
+        <h2>Why Shop With Us?</h2>
+        <ul class="features-list">
+            <li>Free delivery on all orders over £40</li>
+            <li>30-day money-back guarantee on all products</li>
+            <li>Secure payment processing with SSL encryption</li>
+            <li>24/7 customer support via phone, email, and live chat</li>
+            <li>Exclusive deals and discounts for registered members</li>
+            <li>Rapid delivery within 2-4 working days</li>
+            <li>Authentic products with manufacturer warranties</li>
+            <li>Easy returns and exchanges process</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 TechMart UK. All rights reserved. | Region: United Kingdom</p>
+    </footer>
+
+    <script>
+        function enlargeImage(imgId) {
+            const img = document.getElementById(imgId);
+            const currentWidth = img.offsetWidth;
+            const maxWidth = 400;
+            
+            if (currentWidth < maxWidth) {
+                img.style.width = (currentWidth + 20) + 'px';
+                img.style.height = (currentWidth + 20) + 'px';
+            }
+        }
+
+        function shrinkImage(imgId) {
+            const img = document.getElementById(imgId);
+            const currentWidth = img.offsetWidth;
+            const minWidth = 100;
+            
+            if (currentWidth > minWidth) {
+                img.style.width = (currentWidth - 20) + 'px';
+                img.style.height = (currentWidth - 20) + 'px';
+            }
+        }
+    </script>
+</body>
+</html>
